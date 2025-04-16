@@ -1,147 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task: HTML Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task: HTML with CSS</title>
 
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- Internal CSS styles -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+  <!-- Internal CSS to demonstrate various selectors and properties -->
+  <style>
+    /* Tag selector */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+    }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
+    /* ID selector */
+    #main-title {
+      font-size: 2.5rem;
+      color: #007acc;
+      padding: 10px;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+    /* Class selector */
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+    /* Group selector */
+    h2, h3 {
+      color: #444;
+      margin-bottom: 8px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
+    /* Descendant selector */
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
 
-        main {
-            padding: 20px;
-        }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        section {
-            margin-bottom: 20px;
-        }
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
 
-        aside {
-            background-color: #ddd;
-            padding: 15px;
-            margin-top: 20px;
-        }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: bottom;
-            bottom: 0;
-            width: 100%;
-        }
+    main {
+      padding: 20px;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    section {
+      margin-bottom: 20px;
+    }
 
-        ol, ul {
-            padding-left: 20px;
-        }
-    </style>
+    aside {
+      background-color: #ddd;
+      padding: 15px;
+      margin-top: 20px;
+      border-left: 5px solid #007acc;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #007acc;
+    }
+
+    /* Pseudo-classes */
+    a:hover {
+      color: orange;
+    }
+
+    input:focus {
+      outline: 2px solid green;
+      background-color: #e0ffe0;
+    }
+
+    ul li:nth-child(2) {
+      color: red;
+    }
+
+    /* Common properties */
+    .box {
+      padding: 20px;
+      margin: 20px 0;
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+      line-height: 1.5;
+      overflow: auto;
+    }
+
+    /* Flexbox */
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .flex-item {
+      flex: 1;
+      min-width: 200px;
+      background-color: #fafafa;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    /* Media query */
+    @media (max-width: 600px) {
+      header, footer {
+        font-size: 14px;
+      }
+      nav ul li {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+  
 </head>
 <body>
 
-    <header>
-        <h1>Welcome Users</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1 id="main-title">Welcome Users</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <article>
-                <h2>Article Title</h2>
-                <p>This is a paragraph inside an article. It contains content relevant to the topic of the article.</p>
-            </article>
+  <main>
+    <section>
+      <article class="box">
+        <h2>Article Title</h2>
+        <p>This is a paragraph inside an <span class="highlight">article</span>. It contains content relevant to the topic.</p>
+        <input type="text" placeholder="Focus to see effect">
+      </article>
 
-            <article>
-                <h2>Another Article Title</h2>
-                <p>This is another paragraph inside a different article. It provides more content about a different topic.</p>
-            </article>
-        </section>
+      <article class="box">
+        <h2>Another Article Title</h2>
+        <p>This is another paragraph inside a different article. It provides more content about a different topic.</p>
+      </article>
+    </section>
 
-        <aside>
-            <h3>Related Links</h3>
-            <ul>
-                <li><a href="#link1">Link 1</a></li>
-                <li><a href="#link2">Link 2</a></li>
-            </ul>
-        </aside>
+    <aside>
+      <h3>Related Links</h3>
+      <ul>
+        <li><a href="#link1">Link 1</a></li>
+        <li><a href="#link2">Link 2</a></li>
+      </ul>
+    </aside>
 
-        <section>
-            <h2>Ordered List Example</h2>
-            <ol>
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-            </ol>
+    <section class="flex-container">
+      <div class="flex-item">
+        <h3>Ordered List Example</h3>
+        <ol>
+          <li>First item</li>
+          <li>Second item</li>
+          <li>Third item</li>
+        </ol>
+      </div>
 
-            <h2>Unordered List Example</h2>
-            <ul>
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-            </ul>
-        </section>
+      <div class="flex-item">
+        <h3>Unordered List Example</h3>
+        <ul>
+          <li>First item</li>
+          <li>Second item</li>
+          <li>Third item</li>
+        </ul>
+      </div>
+    </section>
 
-        <section>
-            <h2>Image Example</h2>
-            <img src="https://picsum.photos/id/237/200/300" alt="Placeholder Image">
-        </section>
-    </main>
+    <section>
+      <h2>Image Example</h2>
+      <img src="https://picsum.photos/id/237/200/300" alt="Placeholder Image">
+    </section>
+  </main>
 
-    <footer>
-        <p>© 2025 My Website</p>
-    </footer>
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
 
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
+  <!-- External JS -->
+  <script src="script.js"></script>
 
-    <!-- Inline JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Page loaded successfully!");
-        });
-    </script>
-
+  <!-- Inline JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      console.log("Page loaded successfully!");
+    });
+  </script>
 </body>
 </html>
