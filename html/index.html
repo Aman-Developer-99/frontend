@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task: HTML Page</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        aside {
+            background-color: #ddd;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: bottom;
+            bottom: 0;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome Users</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <article>
+                <h2>Article Title</h2>
+                <p>This is a paragraph inside an article. It contains content relevant to the topic of the article.</p>
+            </article>
+
+            <article>
+                <h2>Another Article Title</h2>
+                <p>This is another paragraph inside a different article. It provides more content about a different topic.</p>
+            </article>
+        </section>
+
+        <aside>
+            <h3>Related Links</h3>
+            <ul>
+                <li><a href="#link1">Link 1</a></li>
+                <li><a href="#link2">Link 2</a></li>
+            </ul>
+        </aside>
+
+        <section>
+            <h2>Ordered List Example</h2>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+
+            <h2>Unordered List Example</h2>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Image Example</h2>
+            <img src="https://picsum.photos/id/237/200/300" alt="Placeholder Image">
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 My Website</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Page loaded successfully!");
+        });
+    </script>
+
+</body>
+</html>
