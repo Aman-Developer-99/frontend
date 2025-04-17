@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Form</title>
+</head>
+<body>
+
+  <h2>User Form</h2>
+  <form id="userForm">
+    <label>Name: <input type="text" id="name" name="name" required></label><br><br>
+
+    <label>Gender:</label><br>
+    <label><input type="radio" name="gender" value="Male"> Male</label><br>
+    <label><input type="radio" name="gender" value="Female"> Female</label><br><br>
+
+    <label>Hobbies:</label><br>
+    <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label><br>
+    <label><input type="checkbox" name="hobbies" value="Gaming"> Gaming</label><br>
+    <label><input type="checkbox" name="hobbies" value="Traveling"> Traveling</label><br><br>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <option value="">Select</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+    </select><br><br>
+
+    <label for="bio">Bio:</label><br>
+    <textarea id="bio" name="bio" rows="4" cols="30"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Submitted Users (No Duplicates):</h3>
+  <ul id="userList"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
