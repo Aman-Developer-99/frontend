@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM & jQuery Basics</title>
+  <style>
+    .highlight {
+      color: white;
+      background-color: teal;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+ 
+  <h2>DOM Manipulation and jQuery Basics</h2>
+ 
+  <!-- Section: Changing content -->
+  <p id="content">Original Content</p>
+  <button onclick="changeContent()">Change Content (JS)</button>
+  <button id="jqChange">Change Content (jQuery)</button>
+ 
+  <hr>
+ 
+  <!-- Section: Changing styles -->
+  <p id="styleMe">Style this text</p>
+  <button onclick="changeStyle()">Change Style (JS)</button>
+  <button id="jqStyle">Change Style (jQuery)</button>
+ 
+  <hr>
+ 
+  <!-- Section: Adding nodes -->
+  <ul id="itemList">
+    <li>Item 1</li>
+  </ul>
+  <button onclick="addItem()">Add Item (JS)</button>
+  <button id="jqAdd">Add Item (jQuery)</button>
+ 
+  <hr>
+ 
+  <!-- Section: Deleting nodes -->
+  <button onclick="deleteItem()">Delete Last Item (JS)</button>
+  <button id="jqDelete">Delete Last Item (jQuery)</button>
+ 
+  <hr>
+ 
+  <!-- Section: Handling events -->
+  <input type="text" id="nameInput" placeholder="Type your name">
+  <p id="output"></p>
+ 
+  <input type="text" id="jqInput" placeholder="Type with jQuery">
+  <p id="jqOutput"></p>
+ 
+  <!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
+  <!-- JavaScript Code -->
+  <script>
+    // JS: Changing content
+    function changeContent() {
+      document.getElementById("content").textContent = "Content changed with JavaScript!";
+    }
+ 
+    // JS: Changing style
+    function changeStyle() {
+      const el = document.getElementById("styleMe");
+      el.classList.add("highlight");
+    }
+ 
+    // JS: Adding a new list item
+    function addItem() {
+      const li = document.createElement("li");
+      li.textContent = "New Item (JS)";
+      document.getElementById("itemList").appendChild(li);
+    }
+ 
+    // JS: Deleting last item
+    function deleteItem() {
+      const list = document.getElementById("itemList");
+      if (list.lastElementChild) {
+        list.removeChild(list.lastElementChild);
+      }
+    }
+ 
+    // JS: Handling input change
+    document.getElementById("nameInput").addEventListener("input", function () {
+      document.getElementById("output").textContent = "Hello, " + this.value;
+    });
+ 
+    // jQuery: Changing content
+    $("#jqChange").click(function () {
+      $("#content").text("Content changed with jQuery!");
+    });
+ 
+    // jQuery: Changing style
+    $("#jqStyle").click(function () {
+      $("#styleMe").addClass("highlight");
+    });
+ 
+    // jQuery: Add new item
+    $("#jqAdd").click(function () {
+      $("#itemList").append("<li>New Item (jQuery)</li>");
+    });
+ 
+    // jQuery: Delete last item
+    $("#jqDelete").click(function () {
+      $("#itemList li:last").remove();
+    });
+ 
+    // jQuery: Input change
+    $("#jqInput").on("input", function () {
+      $("#jqOutput").text("Hi, " + $(this).val());
+    });
+  </script>
+</body>
+</html>
